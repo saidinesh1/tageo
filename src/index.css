@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+#root{
+  font-family: 'Geist', sans-serif !important;
+}
+
+/* Ticker/Marquee Animation */
+.ticker-wrapper {
+  background-color: #495b41;
+  color: white;
+  height: 36px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-content {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 20s linear infinite;
+}
+
+.ticker-item {
+  padding: 0 3rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
