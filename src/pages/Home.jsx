@@ -71,11 +71,11 @@ const productCategories = {
         description: 'Nothing is more frustrating than stubborn food residues that refuse to come off your utensils. Tageo Dishwash Liquid is specially formulated to tackle even the toughest grease and food stains with ease. Just a drop delivers powerful cleaning action, making dishwashing quick and hassle-free.',
         benefits: ['Removes tough grease', 'Eliminates food odour', 'Gentle on hands', 'Sparkling clean finish'],
         products: [
-            { name: 'Dishwash Green Apple', image: DishwashGreenApple },
+            { name: 'Dishwash Green Apple 500ml', image: DishwashGreenApple },
             { name: 'Dishwash Green Apple 225ml', image: DishwashGreenApple225 },
-            { name: 'Dishwash Lemon', image: DishwashLemon },
+            { name: 'Dishwash Lemon 500ml', image: DishwashLemon },
             { name: 'Dishwash Lemon 225ml', image: DishwashLemon225 },
-            { name: 'Dishwash Orange', image: DishwashOrange },
+            { name: 'Dishwash Orange 500ml', image: DishwashOrange },
             { name: 'Dishwash Orange 225ml', image: DishwashOrange225 },
         ],
     },
@@ -190,22 +190,30 @@ export const Home = () => {
                 <p className='text-[#353935] text-[16px] md:text-[17px] leading-[23px] text-center max-w-4xl'>Whether it's toilet cleaners, dishwash liquids, floor cleaners, or detergent liquids—TAGEO brings you effective, reliable, and easy-to-use products that make everyday cleaning effortless.</p>
             </div>
             {/* Banner Slider */}
-            <div className='w-full relative overflow-hidden'>
-                <div 
-                    className='flex transition-transform duration-700 ease-in-out'
+            <div className='w-full relative overflow-hidden h-auto md:h-[400px] lg:h-[500px] md:bg-gradient-to-br md:from-[#495B41]/10 md:via-[#6B8E5D]/5 md:to-[#495B41]/10'>
+                {/* Decorative background pattern for md screens */}
+                <div className='hidden md:block absolute inset-0 opacity-20' style={{
+                    backgroundImage: `
+                        radial-gradient(circle at 20% 50%, #495B41 1px, transparent 1px),
+                        radial-gradient(circle at 80% 50%, #6B8E5D 1px, transparent 1px)
+                    `,
+                    backgroundSize: '50px 50px'
+                }}></div>
+                <div
+                    className='flex transition-transform duration-700 ease-in-out h-full relative z-10'
                     style={{ transform: `translateX(-${currentBanner * 100}%)` }}
                 >
                     {banners.map((banner, index) => (
-                        <img 
+                        <img
                             key={index}
-                            src={banner} 
-                            className='w-full min-w-full h-auto object-cover' 
+                            src={banner}
+                            className='w-full min-w-full h-auto md:h-full object-contain'
                             alt={`Banner ${index + 1}`}
                         />
                     ))}
                 </div>
                 {/* Navigation dots */}
-                <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 bg-[#495B41]/40 backdrop-blur-lg rounded-full px-4 py-2.5 border border-white/20'>
+                <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 bg-[#495B41]/40 backdrop-blur-lg rounded-full px-4 py-2.5 border border-white/20 z-20'>
                     {banners.map((_, index) => (
                         <button
                             key={index}
@@ -219,17 +227,17 @@ export const Home = () => {
                     ))}
                 </div>
                 {/* Arrow buttons */}
-                <button 
+                <button
                     onClick={() => setCurrentBanner((prev) => (prev - 1 + banners.length) % banners.length)}
-                    className='absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#495B41]/40 backdrop-blur-lg hover:bg-[#495B41]/70 flex items-center justify-center shadow-lg transition-all duration-300 cursor-pointer border border-white/20'
+                    className='absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#495B41]/40 backdrop-blur-lg hover:bg-[#495B41]/70 flex items-center justify-center shadow-lg transition-all duration-300 cursor-pointer border border-white/20 z-20'
                 >
                     <svg className='w-5 h-5 text-white drop-shadow-md' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
                     </svg>
                 </button>
-                <button 
+                <button
                     onClick={() => setCurrentBanner((prev) => (prev + 1) % banners.length)}
-                    className='absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#495B41]/40 backdrop-blur-lg hover:bg-[#495B41]/70 flex items-center justify-center shadow-lg transition-all duration-300 cursor-pointer border border-white/20'
+                    className='absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#495B41]/40 backdrop-blur-lg hover:bg-[#495B41]/70 flex items-center justify-center shadow-lg transition-all duration-300 cursor-pointer border border-white/20 z-20'
                 >
                     <svg className='w-5 h-5 text-white drop-shadow-md' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
