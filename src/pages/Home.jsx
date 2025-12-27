@@ -61,7 +61,7 @@ const productCategories = {
         products: [
             { name: 'Detergent Liquid 1L', image: Detergent1L },
             { name: 'Detergent Liquid 500ml', image: Detergent500ml },
-            { name: 'Detergent Liquid 225ml', image: Detergent225ml },
+            
             { name: 'Detergent Liquid Spout 1L', image: DetergentSpout1L },
         ],
     },
