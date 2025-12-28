@@ -52,6 +52,13 @@ import Toilet1L from '../assets/images/Toilet cleaner/Toilet cleaner 1l.jpeg';
 import Toilet225ml from '../assets/images/Toilet cleaner/Toilet cleaner 225ml.jpeg';
 import Toilet500ml from '../assets/images/Toilet cleaner/Toilet cleaner 500ml.jpeg';
 
+// Other Essentials
+import BathroomCleaner from '../assets/images/other essentials/Bathroom cleaner.jpeg';
+import BleachingPowder from '../assets/images/other essentials/Bleaching powder.jpeg';
+import FabricSoftener from '../assets/images/other essentials/Fabric softner(225ml).jpeg';
+import GlassCleaner from '../assets/images/other essentials/Glass and Household cleaner.jpeg';
+import KitchenCleaner from '../assets/images/other essentials/Kitchen cleaner(475 ml).jpeg';
+
 const productCategories = {
     detergents: {
         name: 'Detergent Liquids',
@@ -59,10 +66,10 @@ const productCategories = {
         description: 'Tageo Fabric Detergent Liquid delivers a powerful 6-in-1 cleaning action designed to keep your clothes fresh, bright, and well cared for. Its advanced formula effectively fights tough stains, ensures clean rinsing, enhances fabric brightness, eliminates unpleasant odours, and leaves a long-lasting fresh scent—while providing gentle care to your fabrics.',
         benefits: ['Fights tough stains', 'Enhances brightness', 'Long-lasting freshness', 'Gentle on fabrics'],
         products: [
-            { name: 'Detergent Liquid 1L', image: Detergent1L },
-            { name: 'Detergent Liquid 500ml', image: Detergent500ml },
-            
-            { name: 'Detergent Liquid Spout 1L', image: DetergentSpout1L },
+            { name: 'Detergent Liquid 1L', image: Detergent1L, price: 195 },
+            { name: 'Detergent Liquid 500ml', image: Detergent500ml, price: 99 },
+
+            { name: 'Detergent Liquid Spout 1L', image: DetergentSpout1L, price: 55 },
         ],
     },
     dishwash: {
@@ -71,12 +78,12 @@ const productCategories = {
         description: 'Nothing is more frustrating than stubborn food residues that refuse to come off your utensils. Tageo Dishwash Liquid is specially formulated to tackle even the toughest grease and food stains with ease. Just a drop delivers powerful cleaning action, making dishwashing quick and hassle-free.',
         benefits: ['Removes tough grease', 'Eliminates food odour', 'Gentle on hands', 'Sparkling clean finish'],
         products: [
-            { name: 'Dishwash Green Apple 500ml', image: DishwashGreenApple },
-            { name: 'Dishwash Green Apple 225ml', image: DishwashGreenApple225 },
-            { name: 'Dishwash Lemon 500ml', image: DishwashLemon },
-            { name: 'Dishwash Lemon 225ml', image: DishwashLemon225 },
-            { name: 'Dishwash Orange 500ml', image: DishwashOrange },
-            { name: 'Dishwash Orange 225ml', image: DishwashOrange225 },
+            { name: 'Dishwash Green Apple 500ml', image: DishwashGreenApple, price: 105 },
+            { name: 'Dishwash Green Apple 225ml', image: DishwashGreenApple225, price: 49 },
+            { name: 'Dishwash Lemon 500ml', image: DishwashLemon, price: 105 },
+            { name: 'Dishwash Lemon 225ml', image: DishwashLemon225, price: 49 },
+            { name: 'Dishwash Orange 500ml', image: DishwashOrange, price: 105 },
+            { name: 'Dishwash Orange 225ml', image: DishwashOrange225, price: 49 },
         ],
     },
     floorCleaner: {
@@ -85,19 +92,19 @@ const productCategories = {
         description: 'Keep every floor in your home spotless and hygienic with Tageo Multi-Surface Floor Cleaner. Designed for granite, marble, ceramic, mosaic, cement, and wooden floors, it effectively removes tough stains, dirt, and grime while disinfecting for a healthier living environment.',
         benefits: ['Works on all surfaces', 'Disinfects & cleans', 'Restores natural shine', 'Fresh fragrance'],
         products: [
-            { name: 'Floor Cleaner Jasmine', image: FloorJasmine },
-            { name: 'Floor Cleaner Jasmine 200ml', image: FloorJasmine200 },
-            { name: 'Floor Cleaner Lavender', image: FloorLavender },
-            { name: 'Floor Cleaner Lavender 200ml', image: FloorLavender200 },
-            { name: 'Floor Cleaner Rose', image: FloorRose },
-            { name: 'Floor Cleaner Rose 200ml', image: FloorRose200 },
-            { name: 'Floor Cleaner Sandal', image: FloorSandal },
-            { name: 'Floor Cleaner Sandal 200ml', image: FloorSandal200 },
-            { name: 'Floor Cleaner Lemon 1L', image: FloorLemon1L },
-            { name: 'Floor Cleaner Lemon 500ml', image: FloorLemon500 },
-            { name: 'Floor Cleaner Lemon 200ml', image: FloorLemon200 },
-            { name: 'Floor Cleaner PV', image: FloorPv },
-            { name: 'Floor Cleaner PV 200ml', image: FloorPv200 },
+            { name: 'Floor Cleaner Jasmine', image: FloorJasmine, price: 189 },
+            { name: 'Floor Cleaner Jasmine 200ml', image: FloorJasmine200, price: 42 },
+            { name: 'Floor Cleaner Lavender', image: FloorLavender, price: 189 },
+            { name: 'Floor Cleaner Lavender 200ml', image: FloorLavender200, price: 42 },
+            { name: 'Floor Cleaner Rose', image: FloorRose, price: 189 },
+            { name: 'Floor Cleaner Rose 200ml', image: FloorRose200, price: 42 },
+            { name: 'Floor Cleaner Sandal', image: FloorSandal, price: 189 },
+            { name: 'Floor Cleaner Sandal 200ml', image: FloorSandal200, price: 42 },
+            { name: 'Floor Cleaner Lemon 1L', image: FloorLemon1L, price: 189 },
+            { name: 'Floor Cleaner Lemon 500ml', image: FloorLemon500, price: 99 },
+            { name: 'Floor Cleaner Lemon 200ml', image: FloorLemon200, price: 42 },
+            { name: 'Floor Cleaner PV', image: FloorPv, price: 189 },
+            { name: 'Floor Cleaner PV 200ml', image: FloorPv200, price: 42 },
         ],
     },
     phenyle: {
@@ -124,9 +131,22 @@ const productCategories = {
         description: 'Maintaining a clean toilet is essential for hygiene and health. Tageo Toilet Cleaner is specially formulated to provide deep cleaning that helps prevent the build-up of stubborn stains while inhibiting the growth of germs and bacteria.',
         benefits: ['Removes tough deposits', 'Kills germs & bacteria', 'Fresh fragrance', 'Long-lasting shine'],
         products: [
-            { name: 'Toilet Cleaner 1L', image: Toilet1L },
-            { name: 'Toilet Cleaner 500ml', image: Toilet500ml },
-            { name: 'Toilet Cleaner 225ml', image: Toilet225ml },
+            { name: 'Toilet Cleaner 1L', image: Toilet1L, price: 183 },
+            { name: 'Toilet Cleaner 500ml', image: Toilet500ml, price: 95 },
+            { name: 'Toilet Cleaner 225ml', image: Toilet225ml, price: 42 },
+        ],
+    },
+    otherEssentials: {
+        name: 'Other Essentials',
+        tagline: 'Essential Home Care',
+        description: 'Complete your home cleaning arsenal with our range of essential cleaning products. From kitchen to bathroom, we have everything you need to keep your home sparkling clean and fresh.',
+        benefits: ['Versatile cleaning', 'Specialized formulas', 'Tough on stains', 'Value for money'],
+        products: [
+            { name: 'Kitchen Cleaner 475ml', image: KitchenCleaner, price: 99 },
+            { name: 'Bathroom Cleaner 475ml', image: BathroomCleaner, price: 99 },
+            { name: 'Glass Cleaner 475ml', image: GlassCleaner, price: 99 },
+            { name: 'Fabric Softener 225ml', image: FabricSoftener, price: 61 },
+            { name: 'Bleaching Powder 100gm', image: BleachingPowder, price: 12 },
         ],
     },
 };
@@ -182,6 +202,9 @@ export const Home = () => {
                     </span>
                     <span className='px-5 py-2.5 rounded-full bg-[#495B41]/5 hover:bg-[#495B41] text-[15px] text-[#353935] hover:text-white font-semibold transition-all duration-300 cursor-default whitespace-nowrap'>
                         Toilet Cleaners
+                    </span>
+                    <span className='px-5 py-2.5 rounded-full bg-[#495B41]/5 hover:bg-[#495B41] text-[15px] text-[#353935] hover:text-white font-semibold transition-all duration-300 cursor-default whitespace-nowrap'>
+                        Other Essentials
                     </span>
                 </nav>
             </div>
@@ -306,7 +329,20 @@ export const Home = () => {
                         >
                             {/* Decorative corner accent */}
                             <div className='absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#495B41]/10 to-transparent rounded-bl-full'></div>
-                            
+
+                            {/* Price Badge */}
+                            {product.price && (
+                                <div className='absolute top-3 left-3 z-20 flex flex-col items-center'>
+                                    <div className='bg-gradient-to-br from-[#495B41] to-[#6B8E5D] text-white px-3 py-2 rounded-xl shadow-lg border-2 border-white/30 backdrop-blur-sm transform group-hover:scale-110 transition-transform duration-300'>
+                                        <div className='flex items-start gap-0.5'>
+                                            <span className='text-[10px] font-semibold mt-0.5'>₹</span>
+                                            <span className='text-xl md:text-2xl font-bold leading-none'>{product.price}</span>
+                                        </div>
+                                        <div className='text-[9px] md:text-[10px] text-center text-white/90 font-medium mt-0.5 uppercase tracking-wide'>MRP</div>
+                                    </div>
+                                </div>
+                            )}
+
                             {/* Image container with pure white background and decorative dots */}
                             <div className='h-[200px] md:h-[240px] flex items-center justify-center p-5 bg-white relative overflow-hidden'>
                                 {/* Scattered green dots pattern */}
