@@ -69,7 +69,7 @@ const productCategories = {
             { name: 'Detergent Liquid 1L', image: Detergent1L, price: 195 },
             { name: 'Detergent Liquid 500ml', image: Detergent500ml, price: 99 },
 
-            { name: 'Detergent Liquid Spout 1L', image: DetergentSpout1L, price: 55 },
+            { name: 'Detergent Liquid Spout 1L', image: DetergentSpout1L, price: 99 },
         ],
     },
     dishwash: {
@@ -100,7 +100,7 @@ const productCategories = {
             { name: 'Floor Cleaner Rose 200ml', image: FloorRose200, price: 42 },
             { name: 'Floor Cleaner Sandal', image: FloorSandal, price: 189 },
             { name: 'Floor Cleaner Sandal 200ml', image: FloorSandal200, price: 42 },
-            { name: 'Floor Cleaner Lemon 1L', image: FloorLemon1L, price: 189 },
+            { name: 'Floor Cleaner Lemon 975ml', image: FloorLemon1L, price: 189 },
             { name: 'Floor Cleaner Lemon 500ml', image: FloorLemon500, price: 99 },
             { name: 'Floor Cleaner Lemon 200ml', image: FloorLemon200, price: 42 },
             { name: 'Floor Cleaner PV', image: FloorPv, price: 189 },
@@ -113,16 +113,16 @@ const productCategories = {
         description: "Tageo's Premium Graded Phenyle is a highly concentrated disinfectant solution designed to kill germs and keep any space fresh and odor-free. Its powerful formula promotes a healthier environment by helping prevent the spread of diseases.",
         benefits: ['Kills germs effectively', 'Long-lasting fragrance', 'Multiple aromas', 'Hospital-grade quality'],
         products: [
-            { name: 'Phenyle EP Green', image: PhenyleEpGreen },
-            { name: 'Phenyle EP Pink', image: PhenyleEpPink },
-            { name: 'Phenyle EP White', image: PhenyleEpWhite },
-            { name: 'Premium Phenyle Orange', image: PremPhenyleOrange },
-            { name: 'Premium Phenyle Pink', image: PremPhenylePink },
-            { name: 'Premium Phenyle White', image: PremPhenyleWhite },
-            { name: 'Premium Phenyle Yellow', image: PremPhenyleYellow },
-            { name: 'Gama Gama Rose', image: GamaRose },
-            { name: 'Gama Gama PV', image: GamaPv },
-            { name: 'Gama Gama Orange', image: GamaOrange },
+            { name: 'Phenyle EP Green', image: PhenyleEpGreen,price:79 },
+            { name: 'Phenyle EP Pink', image: PhenyleEpPink,price:79 },
+            { name: 'Phenyle EP White', image: PhenyleEpWhite,price:79 },
+            { name: 'Premium Phenyle Orange', image: PremPhenyleOrange,price:59 },
+            { name: 'Premium Phenyle Pink', image: PremPhenylePink,price:59 },
+            { name: 'Premium Phenyle White', image: PremPhenyleWhite,price:59 },
+            { name: 'Premium Phenyle Yellow', image: PremPhenyleYellow,price:59 },
+            { name: 'Gama Gama Rose', image: GamaRose,price:99 },
+            { name: 'Gama Gama PV', image: GamaPv,price:69 },
+            { name: 'Gama Gama Orange', image: GamaOrange,price:89 },
         ],
     },
     toiletCleaner: {
@@ -144,7 +144,7 @@ const productCategories = {
         products: [
             { name: 'Kitchen Cleaner 475ml', image: KitchenCleaner, price: 99 },
             { name: 'Bathroom Cleaner 475ml', image: BathroomCleaner, price: 99 },
-            { name: 'Glass Cleaner 475ml', image: GlassCleaner, price: 99 },
+            { name: 'Glass Cleaner 475ml', image: GlassCleaner, price: 89 },
             { name: 'Fabric Softener 225ml', image: FabricSoftener, price: 61 },
             { name: 'Bleaching Powder 100gm', image: BleachingPowder, price: 12 },
         ],
@@ -174,8 +174,41 @@ export const Home = () => {
 
     const currentProducts = productCategories[activeCategory].products;
 
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Tageo Home Care Products",
+        "image": "https://tageohomecare.in/assets/Tageo.png", 
+        "telephone": "0461-2323021",
+        "url": "https://tageohomecare.in",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Tageo Home Care",
+            "addressLocality": "Tamil Nadu", 
+            "postalCode": "628002", 
+            "addressCountry": "IN"
+        },
+        "priceRange": "₹42 - ₹195",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+    };
+
     return (
         <div className="min-h-screen w-screen root overflow-x-hidden">
+            <script type="application/ld+json">
+                {JSON.stringify(structuredData)}
+            </script>
             <div className="ticker-wrapper">
                 <div className="ticker-content">
                     {[...captions, ...captions].map((caption, index) => (
@@ -186,7 +219,9 @@ export const Home = () => {
                 </div>
             </div>
             <div className='w-full flex flex-col justify-center p-[34px] items-center border-b-[0.5px] border-[#DADADA]'>
-                <img src={Logo} className='h-[200px] w-[200px] flex' alt="Tageo Logo"/>
+                <h1>
+                    <img src={Logo} className='h-[200px] w-[200px] flex' alt="Tageo Home Care Products"/>
+                </h1>
                 <nav className={`hidden md:flex flex-row gap-x-4 lg:gap-x-8 mt-4`}>
                     <span className='px-5 py-2.5 rounded-full bg-[#495B41]/5 hover:bg-[#495B41] text-[15px] text-[#353935] hover:text-white font-semibold transition-all duration-300 cursor-default whitespace-nowrap'>
                         Detergent Liquids
