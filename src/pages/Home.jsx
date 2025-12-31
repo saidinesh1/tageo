@@ -103,7 +103,7 @@ const productCategories = {
             { name: 'Floor Cleaner Lemon 975ml', image: FloorLemon1L, price: 189 },
             { name: 'Floor Cleaner Lemon 500ml', image: FloorLemon200, price: 99 },
             { name: 'Floor Cleaner Lemon 200ml', image: FloorLemon500, price: 42 },
-            { name: 'Floor Cleaner PV 975ml', image: FloorPv, price: 189 },
+            { name: 'Floor Cleaner PV 500ml', image: FloorPv, price: 99 },
             { name: 'Floor Cleaner PV 200ml', image: FloorPv200, price: 42 },
         ],
     },
